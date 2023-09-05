@@ -8,3 +8,5 @@ resposta = ["Sim","Não","Talvez"]
 pergunta = input("Faça Sua pergunta! ")
 
 print(f"{pergunta} {random.choice(resposta)}")
+
+#comentario para fazer passo a passo do gi
