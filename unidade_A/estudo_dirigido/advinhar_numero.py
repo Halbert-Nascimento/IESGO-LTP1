@@ -6,7 +6,6 @@
 #Caso contrário, imprima "Você errou!".
 
 import random
-
 numero_aleatorio = random.randint(1, 10)
 
 while True:
@@ -14,9 +13,9 @@ while True:
     if advinhar_numero < 1 or advinhar_numero > 10:
         print("\n\tInsira um numero Valido! ")
         continue
-    else:
-        if advinhar_numero == numero_aleatorio:
-            print("\n\t Você acertou!")
-            break
-        else:
-            print("\n\t Você errou! ")
+    break
+
+if advinhar_numero == numero_aleatorio:
+    print("\n\t Você acertou!\n")
+else:
+    print("\n\t Você errou! \n")
