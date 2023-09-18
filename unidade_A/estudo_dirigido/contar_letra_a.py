@@ -14,3 +14,6 @@ print(f"Total de letras 'a' que apareceu no texto foi {cont}")
 # #         cont +=1
 
 # print(f"Total de letras 'a' que apareceu no texto foi {cont}")
+# outra forma de contar usando uma função
+# def contar_caracteres(texto):
+#     return texto.count('a')
