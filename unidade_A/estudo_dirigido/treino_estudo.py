@@ -61,3 +61,74 @@ while produto.lower() != "sair":
 print(f"Lista finalizada! \n Itens: {lista_compra}")
 """
 #fim exe 4 lista de frutas / compras
+
+
+# Exercício 5: Faça um programa em que o usuário digita o raio de um círculo em m e o programa 
+# retorna no console a área do círculo em m² e o perímetro em m.
+# perimetro = 2*pi*raio
+#are = pi*raio**2
+"""
+import math
+pi = math.pi
+def circulo(raio):
+    perimetro = 2*pi*raio
+    area = pi*raio**2
+    return f"Com base no raio do circulo informado \nO perimeto e {perimetro:.2f} e a area e {area:2f} "
+
+print(circulo(float(input("Digite o raio do circulo em m: "))))
+"""
+#fim exe 5 circulo area e perimetro
+
+# Exercício 6: Faça um programa que solicita o ano de nascimento do usuário e retorna o seu signo no horóscopo chinês
+"""
+def horoscopo_chines(ano):
+    horoscopo = ["Rato", "Boi", "Tigre", "coelho", "Dragão", "Serpente", "Cavalo", "Cabra", "Macaco", "Galo", "Cão", "Porco"]
+
+    ano_inicial_da_primeira_posicao =  1960-12**2 #menor ano da lista informada e depois fatora para diminuir mais 144 anos
+    signo = (ano - ano_inicial_da_primeira_posicao)%12
+
+    return f"Posição {signo}, Seu signo chines e {horoscopo[signo].upper()}"
+
+print(horoscopo_chines(int(input("Digite seu ano de Nascimento: "))))
+"""
+#fim exe 5 signo / horoscopo chines
+
+#Exercício 7: Faça um programa que solicita ao usuário inserir um número inteiro e retorna se ele é primo.  
+"""
+def num_primo():
+    numero = int(input("Digite um numero: "))
+    if numero <= 1:
+        return f"Não e primo"
+    else:
+        for i in range(2, numero):
+            if numero % i == 0:
+                return f"Não e primo"
+    return f"Numero {numero} e primo!"
+    
+print(num_primo())
+"""
+#fim exe 07 verifcar se num e primo
+
+# Exercício 8: Faça um programa que solicita ao usuario inserir um email e retorna se ele é válido ou não.
+"""
+def verificar_email():
+    email = input("Digite seu email! ")
+
+    if email.count('@') == 1:
+        print("Contem 1 '@' ")
+        print("Estapa 1 de verificação, passed!")
+        if email.count(" ") ==0:
+            print("Não contém espaços")
+            print("Estapa 2 de verificação, passed!")
+            return f"Email: {email}, valido! "
+        else:
+            print("Email contém espaços, reproved!")
+            return f"Email: {email}, Invalido! "
+    else:
+        print("Email somente 1 '@' , reproved!")
+        return f"Email: {email}, Invalido! "
+
+print(verificar_email())
+"""
+#fim exe 8 verificar email 2 etapas simples
+
