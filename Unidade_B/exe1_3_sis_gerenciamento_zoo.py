@@ -17,21 +17,23 @@ class Animal:
 class Zoologico:
     def __init__(self):
         self.animais = {}
+        self.animais_lista = []
 
     def adicionar_animal(self, animal):# para adicionar um novo animal ao zoológico.
-        self.animais[animal.nome] = animal
+        self.animais_lista.append(animal)
         # self.animais.append(animal)
         # print("")
 
 
     def remover_animal(self, nome): #para remover um animal do zoológico usando seu nome.
-        # self.animais.remove(nome)
-        print("asd")
+        print(f"{nome.especie} {nome.nome} morreu...\n")
+        self.animais_lista.remove(nome)
+        
 
     def listar_animais(self): #para listar todos os animais no zoológico e suas informações.
         print("Animais No Zoologio:")
-        for animalll in self.animais:
-            print("\t",animalll)
+        for for_animal in self.animais_lista:
+            print("\t",for_animal.descricao())
 
 
 leao_billy = Animal("Billy", "Leão", "4", "Carnivoro")
@@ -46,5 +48,7 @@ brasilia_zoo.adicionar_animal(leao_wendy)
 brasilia_zoo.adicionar_animal(vaca_maru)
 brasilia_zoo.adicionar_animal(porco_jose)
 
+brasilia_zoo.listar_animais()
 
+brasilia_zoo.remover_animal(porco_jose)
 brasilia_zoo.listar_animais()
