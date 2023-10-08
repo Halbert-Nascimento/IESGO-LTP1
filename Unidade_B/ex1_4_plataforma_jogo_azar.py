@@ -31,22 +31,27 @@ class Platafoma:
             print(jogo)
 
 
-tetris = Jogo("Tetris", "Quebra-cabeça", 2, "001")
-flyff = Jogo("Flyff", "RPG", 20, "002")
-f1 = Jogo("F1", "Corrida", 6, "003")
+caca_niqueis = Jogo("Caça-níqueis da Sorte", "Caça-níqueis", 5.00, "001")
+roleta = Jogo("Roleta Premium", "Mesa de Jogo", 10.00, "002")
+poker_online = Jogo("Poker Texas Hold'em", "Mesa de Jogo", 20.00, "003")
+blackjack = Jogo("Blackjack VIP", "Mesa de Jogo", 15.00, "004")
+bingo_online = Jogo("Bingo da Sorte", "Bingo", 8.00, "005")
 
-# print(flyff)
+# print(roleta)
 
 jogando_mais = Platafoma()
-jogando_mais.adicionar_jogo(tetris)
-jogando_mais.adicionar_jogo(flyff)
-jogando_mais.adicionar_jogo(f1)
+jogando_mais.adicionar_jogo(caca_niqueis)
+jogando_mais.adicionar_jogo(roleta)
+jogando_mais.adicionar_jogo(poker_online)
+jogando_mais.adicionar_jogo(blackjack)
+jogando_mais.adicionar_jogo(bingo_online)
 
 print(jogando_mais)
 
 jogando_mais.listar_jogos()
 
-print(jogando_mais.remover_jogo(tetris.id_unico))
-print(jogando_mais.remover_jogo("0003"))
+print(jogando_mais.remover_jogo(caca_niqueis.id_unico))
+print(jogando_mais.remover_jogo("004"))
+print(jogando_mais.remover_jogo("0010"))
 
 jogando_mais.listar_jogos()
