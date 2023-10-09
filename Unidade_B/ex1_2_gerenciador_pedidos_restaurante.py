@@ -11,7 +11,7 @@ pedidos = {}
  #dic para itens do novo pedido
 
 def fazer_pedido():
-    numero_pedido = input("Digite o numero (identificação do pedido): ")
+    numero_pedido = input("\nDigite o numero (identificação do pedido): ")
     itens_pedidos = {}
     mostra_cardapio(itens_menu)
 
@@ -30,30 +30,42 @@ def fazer_pedido():
             mostra_cardapio(itens_menu)
 
 def alterar_remover_pedido(numero_pedido):
-    if input("Deseja 'alterar' ou 'remover' um pedido? ") == "remover":
+    opcao = input(" _'alterar' ou 'remover' um pedido? ").lower()
+    if  opcao == "remover":
         comanda = pedidos[numero_pedido]
-        indice = 0
         for item_lista_for in comanda:
-            print(f"Indice: {indice} -> produto: {item_lista_for} ")
-            indice +=1
-        print("\n Qual item deseja remover?") 
-        # item_remover = int(input("Digite o indice: "))
-        item_remover = input("Digite o indice: ")
-        # it_removido = comanda.remove(item_remover)
-        # print("Item removido: ", it_removido)
+            print(f"Produto: {item_lista_for} ")
+        print("\n Qual item deseja remover? ")       
+        item_remover = input("Digite o nome: ")
         del comanda[item_remover]
-        #foi removido o item falta agora adicio ao dicionario principal na mesmo posição anterio a nova comanda com item removio
-        print("nova item_lista_for com produtos: ",comanda)
+        pedidos[numero_pedido] = comanda
+
+    elif opcao == "alterar":
+        comanda = pedidos[numero_pedido]
+        for item_lista_for in comanda:
+            print(f"Produto: {item_lista_for} ")
+        print("\n Qual item deseja Alterar? ")       
+        item_alterar = input("Digite o nome: ")
+        alterar_quantidade = int(input("Digite quantidade desse produto: "))
+
+
+        comanda[item_alterar] = alterar_quantidade
+        pedidos[numero_pedido] = comanda
+
 
 
 fazer_pedido()
+
 while input("\n\tFazer um novo pedido? 'sim' , 'não' ").lower() == "sim":
+    print(f"Comandas: {pedidos.keys()}, digite a proxima comanda. ")
     fazer_pedido()
-alterar_remover_pedido("1")
+    
+
+alterar_remover_pedido(input(f"\n {pedidos.keys()}\nQual comanda deseja modificar? "))
 
 print(pedidos,"\n")
 # print(pedidos.values())
-print(f"Comandas: {pedidos.keys()}\n")
+# print(f"Comandas: {pedidos.keys()}\n")
 
 for comanda, pedido in pedidos.items():
     print(f"Comanda {comanda}: pedido{pedido}")
