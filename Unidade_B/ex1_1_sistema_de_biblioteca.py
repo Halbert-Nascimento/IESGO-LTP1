@@ -13,10 +13,16 @@ class Membro:
         self.nome = nome
         self.livros_emprestador = []
 
+    def __str__(self):
+        return f"\nMembro: {self.nome} \nLivros emprestados: {len(self.livros_emprestador)}"
+
 class Biblioteca:
     def __init__(self):    
         self.livros = {}
         self.membros = {}
+
+    def __str__(self):
+        return f"\n{len(self.livros)} livros cadastrados na biblioteca! \n{len(self.membros)} membros cadastrados na biblioteca! "
 
     def adicionar_livro(self, livro):
         self.livros[livro.titulo] = livro
@@ -79,6 +85,7 @@ halbert = Membro("Halbert Nascimento")
 murilo = Membro("Murilo Nascimento")
 iesgo_biblioteca = Biblioteca()
 
+
 iesgo_biblioteca.adicionar_livro(logica_de_programaçao)
 iesgo_biblioteca.adicionar_livro(entendendo_algoritmos)
 iesgo_biblioteca.adicionar_livro(o_bom_dinossauro)
@@ -89,6 +96,11 @@ iesgo_biblioteca.registrar_membro(murilo)
 iesgo_biblioteca.emprestar_livro("O Bom Dinossauro", "Murilo Nascimento")
 iesgo_biblioteca.emprestar_livro("Lógica de Programação", "Halbert Nascimento")
 iesgo_biblioteca.emprestar_livro("Entendendo Algoritmos", "Halbert Nascimento")
+
+#printa info dos objetos
+print(halbert)
+print(iesgo_biblioteca)
+
 
 print("\n Situação dos livros:")
 print(logica_de_programaçao)
@@ -104,8 +116,11 @@ print(logica_de_programaçao)
 print(entendendo_algoritmos)
 print(o_bom_dinossauro)
 
+
+
 print(iesgo_biblioteca.remover_membro("Halbert Nascimento"))
 print(iesgo_biblioteca.remover_livro("O Bom Dinossauro"))
 
 iesgo_biblioteca.mostra_membros()
 iesgo_biblioteca.mostra_livros()
+

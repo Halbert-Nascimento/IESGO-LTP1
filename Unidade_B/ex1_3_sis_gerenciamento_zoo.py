@@ -19,6 +19,10 @@ class Zoologico:
         self.animais = {}
         self.animais_lista = []
 
+
+    def __str__(self):
+        return (f"\nO zoologico tem {len(self.animais_lista)} animais sobre nossos cuidados! ")
+
     def adicionar_animal(self, animal):# para adicionar um novo animal ao zoológico.
         self.animais_lista.append(animal)
         # self.animais.append(animal)
@@ -52,3 +56,6 @@ brasilia_zoo.listar_animais()
 
 brasilia_zoo.remover_animal(porco_jose)
 brasilia_zoo.listar_animais()
+
+
+print(brasilia_zoo)
