@@ -1,11 +1,12 @@
 
 class Animal:
-    def __init__(self, nome, especie, idade, dieta):
+    def __init__(self, nome, especie, idade, dieta, id):
         self.nome = nome
         self.especie = especie
         self.idade = idade
         self.dieta = dieta
         self.habitat = ""
+        self.id = id
         
     def __str__(self):
         return (f"\nEspecie: {self.especie} \nNome: {self.nome} \nIdade: {self.idade} \nDieta: {self.dieta}")
@@ -40,10 +41,10 @@ class Zoologico:
             print("\t",for_animal.descricao())
 
 
-leao_billy = Animal("Billy", "Leão", "4", "Carnivoro")
-leao_wendy = Animal("Wendy", "Leão", "3.5", "Carnivoro")
-vaca_maru = Animal("Maru", "Vaca", "3", "Herbívoro")
-porco_jose = Animal("José", "Porco", "7", "Onívoro")
+leao_billy = Animal("Billy", "Leão", "4", "Carnivoro", "001")
+leao_wendy = Animal("Wendy", "Leão", "3.5", "Carnivoro", "002")
+vaca_maru = Animal("Maru", "Vaca", "3", "Herbívoro", "003")
+porco_jose = Animal("José", "Porco", "7", "Onívoro", "004")
 # print(leao_billy.descricao())
 
 brasilia_zoo = Zoologico()

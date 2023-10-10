@@ -1,8 +1,9 @@
 class Livro:
-    def __init__(self, titulo, autor):
+    def __init__(self, titulo, autor, id):
         self.titulo = titulo
         self.autor = autor
         self.status = "Disponivel"
+        self.id = id
 
     def __str__(self):
         return(f"\tTitulo: {self.titulo} \n\tAutor: {self.autor} \n\tStatus: {self.status}\n")
@@ -77,9 +78,9 @@ class Biblioteca:
             print("\t",livros)
         
 
-logica_de_programaçao = Livro("Lógica de Programação", "Edécio Fernando Iepsen")
-entendendo_algoritmos = Livro("Entendendo Algoritmos", "Aditya Y. Bhargava")
-o_bom_dinossauro = Livro("O Bom Dinossauro", "Disney")
+logica_de_programaçao = Livro("Lógica de Programação", "Edécio Fernando Iepsen", "001")
+entendendo_algoritmos = Livro("Entendendo Algoritmos", "Aditya Y. Bhargava", "002")
+o_bom_dinossauro = Livro("O Bom Dinossauro", "Disney", "003")
 
 halbert = Membro("Halbert Nascimento")
 murilo = Membro("Murilo Nascimento")
