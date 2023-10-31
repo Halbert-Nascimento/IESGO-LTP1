@@ -32,6 +32,7 @@ Ao criar o programa, certifique-se de tratar erros e situações em que a fila e
 Siga as diretrizes acima para criar um programa Python que simule a gestão de uma fila de banco com clientes prioritários. Certifique-se de que o programa funcione corretamente e permita que os usuários interajam com a fila, adicionando clientes, atendendo-os e visualizando a fila.
 """
 import array as ar
+import time
 # fila = ar.array('u')
 
 
@@ -49,25 +50,33 @@ class cliente():
             self.fila.append(nome)
 
     def atender_cliente(self):
-        atendido = self.fila.pop(0)
+        try:
+            atendido = self.fila.pop(0)
 
-        print(f"\nCliente {atendido.upper()} atendido! \n")
-        self.visualizar_fila()
+        except IndexError:
+            print(f"Não a cliente em fila para ser atendido! ")
+        else:
+            print(f"\nCliente {atendido.upper()} atendido! \n")
+            self.visualizar_fila()
 
     def visualizar_fila(self):
-        print("Clientes para serem atendidos! ")
-        position = 1
-        for cliente in self.fila:
-            print(f"\t {position}. {cliente}")
-            position+=1
+        if not self.fila:
+            print("Fila Vazia! ")
+        else:
+            print("Clientes para serem atendidos! ")
+            position = 1
+            for cliente in self.fila:
+                print(f"\t {position}. {cliente}")
+                position += 1
+        time.sleep(1)
 
     def remover_da_fila_cliente(self):
         self.visualizar_fila()
-        remover = int(input("Qual deseja remover da fila? Digite numeração: "))
-        removido = self.fila.pop(remover-1)
-        print(f"\nCliente {removido}  foi removido da fila! \n")
-        
-
+        if self.fila:
+            remover = int(
+                input("Qual deseja remover da fila? Digite numeração: "))
+            removido = self.fila.pop(remover-1)
+            print(f"\nCliente {removido}  foi removido da fila! \n")
 
 
 Banco = cliente()
