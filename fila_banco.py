@@ -49,13 +49,25 @@ class cliente():
             self.fila.append(nome)
 
     def atender_cliente(self):
+        atendido = self.fila.pop(0)
 
-        print(f"Cliente {self.fila.remove[0]} foi atendido! ")
+        print(f"\nCliente {atendido.upper()} atendido! \n")
+        self.visualizar_fila()
 
     def visualizar_fila(self):
         print("Clientes para serem atendidos! ")
+        position = 1
         for cliente in self.fila:
-            print(cliente)
+            print(f"\t {position}. {cliente}")
+            position+=1
+
+    def remover_da_fila_cliente(self):
+        self.visualizar_fila()
+        remover = int(input("Qual deseja remover da fila? Digite numeração: "))
+        removido = self.fila.pop(remover-1)
+        print(f"\nCliente {removido}  foi removido da fila! \n")
+        
+
 
 
 Banco = cliente()
@@ -77,9 +89,9 @@ while True:
         Banco.atender_cliente()
 
     elif opcao == '3':
-        print(Banco.fila)
+        Banco.visualizar_fila()
     elif opcao == '4':
-        print()
+        Banco.remover_da_fila_cliente()
     elif opcao == '5':
         break
     else:
