@@ -36,7 +36,7 @@ def salvar_dados():
     with open(nome_arquivo, "w") as arquivo:
         for pessoa in lista_pessoas:
             arquivo.write(
-                f"Nome: {pessoa['Nome']}, Tipo Sanguíneo: {pessoa['Tipo Sanguíneo']}")
+                f"Nome: {pessoa['Nome']}, Tipo Sanguíneo: {pessoa['Tipo Sanguíneo']}\n")
         print("Arquivo Gerado com sucesso! ")
     print()
 
