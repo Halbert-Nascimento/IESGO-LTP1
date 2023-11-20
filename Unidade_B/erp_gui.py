@@ -44,7 +44,7 @@ def cadastrar_produto():
 janela_princial = tk.Tk()
 janela_princial.title("Sistema ERP IESGO")
 janela_princial.attributes('-fullscreen', False)
-janela_princial.attributes('-disabled', False)
+janela_princial.attributes('-disabled', True)
 
 
 janela_princial.attributes()
