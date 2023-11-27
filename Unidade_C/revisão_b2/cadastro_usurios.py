@@ -37,7 +37,7 @@ def visualizar_lista_formatada():
   connection = sqlite3.connect('revisao2.db')
   cursor = connection.cursor()
 
-  curso.execute('SELECT * FROM usuarios')
+  cursor.execute('SELECT * FROM usuarios')
   linhas = cursor.fetchall()
   print("Lista Formatada: ")
 
