@@ -35,10 +35,10 @@ def visualizar_lista():
 
 def visualizar_lista_formatada():
   connection = sqlite3.connect('revisao2.db')
-  curso = connection.cursor()
+  cursor = connection.cursor()
 
   curso.execute('SELECT * FROM usuarios')
-  linhas = curso.fetchall()
+  linhas = cursor.fetchall()
   print("Lista Formatada: ")
 
   for coluna in linhas:
